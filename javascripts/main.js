@@ -20,8 +20,14 @@ var parseQueryString = function(queryString) {
 window.onload = function() {
   var query = window.location.search.substring(1);
   var params = parseQueryString(query);
-  var gist = params.gist || "";
-  var file = params.file ? "?file=" + encodeURIComponent(params.file) : "";
+  var code = document.getElementById("gist");
+  var attr;
   
-  document.getElementById("gist").src = "https://gist.github.com/" + gist + file;
+  if (code && params) {
+      for (attr in params) {
+          if (params.hasOwnProperty(attr)) {
+              code.setProperty(attr) = params[attr];
+          }
+      }
+  }
 };
