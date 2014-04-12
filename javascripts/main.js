@@ -23,5 +23,5 @@ window.onload = function() {
   var gist = params.gist || "";
   var file = params.file ? "?file=" + params.file : "";
   
-  document.getElementById("gist").src = "//gist.github.com/" + gist + file;
+  document.getElementById("gist").src = "https://gist.github.com/" + gist + file;
 };
