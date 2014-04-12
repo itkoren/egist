@@ -19,10 +19,12 @@ var parseQueryString = function(queryString) {
 
 window.onload = function() {
   var query = window.location.search.substring(1);
-  var gist = parseQueryString(query).gist || "";
+  var params = parseQueryString(query);
+  var gist = params.gist || "";
+  var file = params.file ? "?file=" + params.file : "";
   var head = document.getElementsByTagName("head").item(0);
   var script = document.createElement("script");
   script.setAttribute("type", "text/javascript");
-  script.setAttribute("src", "//gist.github.com/" + gist);
+  script.setAttribute("src", "//gist.github.com/" + gist + file);
   head.appendChild(script);
 };
