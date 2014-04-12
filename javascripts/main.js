@@ -11,7 +11,7 @@ var parseQueryString = function(queryString) {
     // Convert the array of strings into an object
     for (i = 0, l = queries.length; i < l; i++) {
         temp = queries[i].split("=");
-        params[temp[0]] = temp[1];
+        params[temp[0]] = decodeURIComponent(temp[1]);
     }
  
     return params;
@@ -21,7 +21,7 @@ window.onload = function() {
   var query = window.location.search.substring(1);
   var params = parseQueryString(query);
   var gist = params.gist || "";
-  var file = params.file ? "?file=" + params.file : "";
+  var file = params.file ? "?file=" + encodeURIComponent(params.file) : "";
   
   document.getElementById("gist").src = "https://gist.github.com/" + gist + file;
 };
