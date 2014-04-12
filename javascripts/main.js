@@ -21,10 +21,7 @@ window.onload = function() {
   var query = window.location.search.substring(1);
   var params = parseQueryString(query);
   var gist = params.gist || "";
-  var file = params.file ? "?file=" + params.file : "";
-  var head = document.getElementsByTagName("head").item(0);
-  var script = document.createElement("script");
-  script.setAttribute("type", "text/javascript");
-  script.setAttribute("src", "//gist.github.com/" + gist + file);
-  head.appendChild(script);
+  var file = params.file ? "?file=" + encodeURIComponent(params.file) : "";
+  
+  document.getElementById("gist").src = "//gist.github.com/" + gist + file;
 };
