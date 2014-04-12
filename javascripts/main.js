@@ -25,8 +25,8 @@ window.onload = function() {
   
   if (code && params) {
       for (attr in params) {
-          if (params.hasOwnProperty(attr)) {
-              code.setProperty(attr, params[attr]);
+          if (params.hasOwnProperty(attr) && params[attr]) {
+              code.setAttribute(attr, params[attr]);
           }
       }
   }
