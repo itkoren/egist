@@ -21,7 +21,7 @@ window.onload = function() {
   var query = window.location.search.substring(1);
   var params = parseQueryString(query);
   var gist = params.gist || "";
-  var file = params.file ? "?file=" + encodeURIComponent(params.file) : "";
+  var file = params.file ? "?file=" + params.file : "";
   
   document.getElementById("gist").src = "//gist.github.com/" + gist + file;
 };
