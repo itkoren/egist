@@ -37,7 +37,7 @@ window.onload = function() {
     var po = document.createElement("script"); 
     po.setAttribute("type", "text/javascript"); 
     po.setAttribute("async", true);
-    po.setAttribute("src", "//cdnjs.cloudflare.com/ajax/libs/gist-embed/1.7/gist-embed.min.js");
+    po.setAttribute("src", "//cdnjs.cloudflare.com/ajax/libs/gist-embed/2.1/gist-embed.min.js");
     
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(po, s);
